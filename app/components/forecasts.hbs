@@ -1,6 +1,6 @@
 <div class="forecasts">
   <label>
-    <span>Your city name</span>
+    <span>Your city name and country</span>
     <Input @value={{this.query}} class="light" placeholder="London, UK" />
   </label>
 
@@ -13,7 +13,7 @@
         {{/each}}
       {{else}}
         {{#if this.query}}
-          <div class="center">loading results, please wait</div>
+          <div class="center">No results were found</div>
         {{/if}}
       {{/if}}
     </Forecasts::Filter>

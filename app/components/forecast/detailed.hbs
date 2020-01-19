@@ -13,6 +13,26 @@
     <table class="table">
       <tbody>
         <tr>
+          <td>Day</td>
+          <td>{{convert-celsius @forecast.list.temp.day}} °C </td>
+        </tr>
+        <tr>
+          <td>Morning</td>
+          <td>{{convert-celsius @forecast.list.temp.morn}} °C </td>
+        </tr>
+        <tr>
+          <td>Evening</td>
+          <td>{{convert-celsius @forecast.list.temp.eve}} °C  </td>
+        </tr>
+        <tr>
+          <td>Night</td>
+          <td>{{convert-celsius @forecast.list.temp.night}} °C    </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table">
+      <tbody>
+        <tr>
           <td>Wind</td>
           <td>{{@forecast.list.speed}}</td>
         </tr>
@@ -28,10 +48,10 @@
           <td>Humidity</td>
           <td>{{@forecast.list.humidity}}</td>
         </tr>
-        <tr>
+        <!-- <tr>
           <td>Geo coords</td>
-          <td></td>
-        </tr>          
+          <td>{{@forecast.city.lat}} - {{@forecast.city.lon}}</td>
+        </tr> -->          
       </tbody>
     </table>
 

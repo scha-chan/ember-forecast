@@ -9,42 +9,16 @@ module('Integration | Component | forecast/detailed', function(hooks) {
   hooks.beforeEach(function() {
     this.setProperties({
       forecast: {
-        id: 'grand-old-mansion',
-        title: 'Grand Old Mansion',
-        owner: 'Veruca Salt',
-        city: 'San Francisco',
-        location: {
-          lat: 37.7749,
-          lng: -122.4194,
-        },
-        category: 'Estate',
-        type: 'Standalone',
-        bedrooms: 15,
-        image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
-        description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.',
+        "city":{"geoname_id":1907296,"name":"Tawarano","lat":35.0164,"lon":139.0077,"country":"JP","iso2":"JP","type":"","population":0},"cnt":10,
+        "list":{"dt":1485741600,"temp":{"day":285.51,"min":285.51,"max":285.51,"night":285.51,"eve":285.51,"morn":285.51},"pressure":1013.75,"humidity":100,"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}],"speed":5.52,"deg":311,"clouds":0}
       }
     });
-  });
-
-  test('it renders a header with a share button', async function(assert) {
-    await render(hbs`<forecast::Detailed @forecast={{this.forecast}} />`);
-
-    assert.dom('.jumbo').exists();
-    assert.dom('.jumbo h2').containsText('Grand Old Mansion');
-    assert.dom('.jumbo p').containsText('a nice place to stay near San Francisco');
-    assert.dom('.jumbo a.button').containsText('Share on Twitter');
-  });
+  }); 
 
   test('it renders detailed information about a forecast property', async function(assert) {
-    await render(hbs`<forecast::Detailed @forecast={{this.forecast}} />`);
+    await render(hbs`<Forecast::Detailed @forecast={{this.forecast}} />`);
 
-    assert.dom('article').hasClass('forecast');
-    assert.dom('article h3').containsText('About Grand Old Mansion');
-    assert.dom('article .detail.owner').containsText('Veruca Salt');
-    assert.dom('article .detail.type').containsText('Standalone – Estate');
-    assert.dom('article .detail.location').containsText('San Francisco');
-    assert.dom('article .detail.bedrooms').containsText('15');
-    assert.dom('article .image').exists();
-    assert.dom('article .map').exists();
+    assert.dom('article').hasClass('forecast-details');
+    assert.dom('article h2').containsText('Weather in Tawarano, JP');
   });
 });

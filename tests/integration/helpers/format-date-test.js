@@ -8,11 +8,11 @@ module('Integration | Helper | format-date', function(hooks) {
 
   // Replace this with your real tests.
   test('it renders', async function(assert) {
-    this.set('inputDate', '1579456800');
-    this.set('inputFormat', 'DD/MM/YYYY');
+    this.set('inputDate', 1485741600);
+    this.set('inputFormat', 'dddd');
 
     await render(hbs`{{format-date inputValue inputFormat}}`);
 
-    assert.equal(this.element.textContent.trim(), '19/01/2020');
+    assert.equal(this.element.textContent.trim(), 'Monday');
   });
 });

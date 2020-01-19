@@ -7,6 +7,7 @@ jobs:
           CHROME_BIN: "/usr/bin/google-chrome"
     steps:
       - checkout
+      - run: npm install -g ember-cli
       - run: npm install
       - run: ember build
       - run: ember test

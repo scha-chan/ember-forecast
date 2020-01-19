@@ -10,6 +10,7 @@ export default class ForecastRoute extends Route {
     let forecastDate = forecast.list.filter((item) => {
       return moment.unix(item.dt).format('DD/MM/YYYY') == date;					      
     });
+    console.log(forecastDate);
     return { city: forecast.city, list: forecastDate  }
   }
 }

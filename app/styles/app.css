@@ -30,9 +30,10 @@ p {
 
 .table {
   border: 1px solid #ccc;
-  width: 48%;
+  width: 23%;
   float: left;
   margin-right: 2%;
+  margin-bottom: 2%;
 }
 
 .table tr td {
@@ -47,6 +48,17 @@ p {
 .table tr td:first-child {
     font-weight: bold;
     width: 30%;
+}
+
+table thead th {
+  background: #dfdfdf;
+  padding-top: 10px;
+  line-height: 1;
+}
+
+table thead th img {
+    margin-top: -5px;
+    margin-left: -5px;
 }
 
 .btn {

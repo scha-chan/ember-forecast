@@ -25,7 +25,8 @@ export default class ForecastFilterComponent extends Component {
       return data.text();
     }).then(data => {
       forecasts = JSON.parse(data);
-      this.filtered = this.filterDuplicate(forecasts);
+      console.log(forecasts);
+      this.filtered = this.filterDuplicate(JSON.parse(data));
       this.store.createRecord('forecast',forecasts);   
       localStorage.setItem('forecasts', JSON.stringify(forecasts));
       return forecasts;
@@ -37,7 +38,6 @@ export default class ForecastFilterComponent extends Component {
       let dateList = [];
       forecasts.list.forEach(function(item,index){
           let date = moment.unix(item.dt).format('DD/MM/YYYY');
-          console.log(date, dateList.indexOf(date));
           if (dateList.indexOf(date) === -1) {
               newList.push(item);
               dateList.push(date);

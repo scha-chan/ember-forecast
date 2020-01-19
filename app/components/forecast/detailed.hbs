@@ -13,23 +13,48 @@
     {{#each @forecast.list as |forecastDay|}}
       
         <table class="table">
-          <tbody>
-          <tr>
-              <td>Hour</td>
-              <td>{{format-date forecastDay.dt "HH:mm"}}</td>
-            </tr>            
+          <thead>
+            <tr>
+              <th colspan="2">
+                {{format-date forecastDay.dt "HH:mm"}} <br/>
+                <img src="http://openweathermap.org/img/w/{{forecastDay.weather.firstObject.icon}}.png" alt="" align="center" >
+{{forecastDay.weather.firstObject.description}}
+              </th>
+            </tr> 
+          </thead>
+          <tbody>                     
             <tr>
               <td>Weather</td>
-              <td>{{convert-celsius forecastDay.weather.firstObject.main}} °C </td>
+              <td>{{convert-celsius forecastDay.main.temp}} °C </td>
+            </tr>
+            <tr>
+              <td>Feels like</td>
+              <td>{{convert-celsius forecastDay.main.feels_like}} °C </td>
+            </tr>
+            <tr>
+              <td>Minimum</td>
+              <td>{{convert-celsius forecastDay.main.temp_min}} °C </td>
+            </tr>
+            <tr>
+              <td>Maximum</td>
+              <td>{{convert-celsius forecastDay.main.temp_max}} °C </td>
+            </tr> 
+            <tr>
+              <td>pressure</td>
+              <td>{{forecastDay.main.pressure}} hpa</td>
+            </tr>           
+            <tr>
+              <td>Humidity</td>
+              <td>{{forecastDay.main.humidity}} %</td>
             </tr>
             <tr>
               <td>Clouds</td>
-              <td>{{forecastDay.clouds}}</td>
+              <td>{{forecastDay.clouds.all}} %</td>
             </tr>
             <tr>
               <td>Wind</td>
-              <td>{{forecast.wind}} </td>
-            </tr>
+              <td>{{forecastDay.wind.speed}} m/s</td>
+            </tr>            
           </tbody>
         </table>
     {{/each}}

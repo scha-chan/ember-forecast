@@ -23,7 +23,7 @@ export default class ForecastFilterComponent extends Component {
     // let key = '7dbb730ec7f2e440c68e695fbcb93812'; 
     // let city = arraySearch[0].trim();
     // let country = arraySearch[1].trim(); 
-    // let url = 'https://api.openweathermap.org/data/2.5/forecast?q='+city+','+country+'&APPID='+key;
+    // let url = 'https://api.openweathermap.org/data/2.5/forecast/daily?q='+city+','+country+'&cnt=16&APPID='+key;
     
     // return fetch(url).then(data => {
     //   return data.text();

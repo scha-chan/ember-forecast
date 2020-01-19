@@ -9,35 +9,40 @@ export default class ForecastModel extends Model {
 }
 
 export class ForecastCityModel extends Model {
-  @attr geoname_id;
+  @attr id;
   @attr name;
+  @attr coord; //ForecastCoordinatesModel  
+  @attr country;
+  @attr timezone;
+  @attr sunrise;
+  @attr sunset;  
+}
+
+export class ForecastCoordinatesModel extends Model {
   @attr lat;
   @attr lon;
-  @attr country;
-  @attr iso2;
-  @attr type;
-  @attr population;  
 }
 
 export class ForecastDateModel extends Model {
   @attr dt;
-  @attr temp; //ForecastTemperatureModel
-  @attr pressure;
-  @attr humidity;
+  @attr main; //ForecastTemperatureModel
   @attr weather; //ForecastWeatherModel[]
-  @attr speed;
-  @attr deg;
   @attr clouds;
-  @attr snow;
+  @attr wind;
+  @attr sys;
+  @attr dt_txt;
 }
 
 export class ForecastTemperatureModel extends Model {
-  @attr day;
-  @attr min;
-  @attr max;
-  @attr night;
-  @attr eve;
-  @attr morn;
+  @attr temp;
+  @attr feels_like;
+  @attr temp_min;
+  @attr temp_max;
+  @attr pressure;
+  @attr sea_level;
+  @attr grnd_level;
+  @attr humidity;
+  @attr temp_kf;
 }
 
 export class ForecastWeatherModel extends Model {

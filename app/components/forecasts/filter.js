@@ -35,15 +35,16 @@ export default class ForecastFilterComponent extends Component {
   filterDuplicate(forecasts) {
       let newList = [];
       let dateList = [];
-      forecast.list.forEach(function(item,index){
+      forecasts.list.forEach(function(item,index){
           let date = moment.unix(item.dt).format('DD/MM/YYYY');
+          console.log(date, dateList.indexOf(date));
           if (dateList.indexOf(date) === -1) {
               newList.push(item);
               dateList.push(date);
           }          
       });
-      forecast.list = newList;
-      return forecast;
+      forecasts.list = newList;
+      return forecasts;
   }
 }
 

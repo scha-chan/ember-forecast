@@ -1,9 +1,9 @@
 <article class="forecast">  
-  <LinkTo @route="forecast" @model={{concat-key @code @forecast.dt}} >
+  <LinkTo @route="forecast" @model={{@forecast.dt}} >
   <div class="card">      
     <div class="date"> {{format-date @forecast.dt "DD/MM/YYYY"}}  {{format-date @forecast.dt "dddd"}}</div>      
     <img src="http://openweathermap.org/img/w/{{@forecast.weather.firstObject.icon}}.png" alt="">
-    <div class="temp">{{convert-celsius @forecast.temp.day}} °C</div>
+    <div class="temp">{{convert-celsius @forecast.main.temp}} °C</div>
     <div class="description">{{@forecast.weather.firstObject.description}}</div>   
   </div>  
   </LinkTo>

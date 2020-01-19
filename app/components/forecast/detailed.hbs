@@ -1,60 +1,41 @@
 
-<div class="forecast-details">
+<article class="forecast-details">
     <h2>Weather in {{@forecast.city.name}}, {{@forecast.city.country}} </h2>     <p></p>
     <p>
-      {{format-date @forecast.list.dt "DD/MM/YYYY"}} - 
-      {{@forecast.list.weather.firstObject.description}}        
+      {{format-date @forecast.list.firstObject.dt "DD/MM/YYYY"}} - 
+      {{@forecast.list.firstObject.weather.firstObject.description}}        
     </p>
     <p>
-      <img src="http://openweathermap.org/img/w/{{@forecast.list.weather.firstObject.icon}}.png" alt="" align="center">
-      {{convert-celsius @forecast.list.temp.day}} °C
+      <img src="http://openweathermap.org/img/w/{{@forecast.list.firstObject.weather.firstObject.icon}}.png" alt="" align="center">
+      {{convert-celsius @forecast.list.firstObject.main.temp}} °C
     </p>
 
-    <table class="table">
-      <tbody>
-        <tr>
-          <td>Day</td>
-          <td>{{convert-celsius @forecast.list.temp.day}} °C </td>
-        </tr>
-        <tr>
-          <td>Morning</td>
-          <td>{{convert-celsius @forecast.list.temp.morn}} °C </td>
-        </tr>
-        <tr>
-          <td>Evening</td>
-          <td>{{convert-celsius @forecast.list.temp.eve}} °C  </td>
-        </tr>
-        <tr>
-          <td>Night</td>
-          <td>{{convert-celsius @forecast.list.temp.night}} °C    </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table">
-      <tbody>
-        <tr>
-          <td>Wind</td>
-          <td>{{@forecast.list.speed}}</td>
-        </tr>
-        <tr>
-          <td>Cloudiness</td>
-          <td>{{@forecast.list.clouds}}</td>
-        </tr>
-        <tr>
-          <td>Pressure</td>
-          <td>{{@forecast.list.pressure}}</td>
-        </tr>
-        <tr>
-          <td>Humidity</td>
-          <td>{{@forecast.list.humidity}}</td>
-        </tr>
-        <!-- <tr>
-          <td>Geo coords</td>
-          <td>{{@forecast.city.lat}} - {{@forecast.city.lon}}</td>
-        </tr> -->          
-      </tbody>
-    </table>
+    {{#each @forecast.list as |forecastDay|}}
+      
+        <table class="table">
+          <tbody>
+          <tr>
+              <td>Hour</td>
+              <td>{{format-date forecastDay.dt "HH:mm"}}</td>
+            </tr>            
+            <tr>
+              <td>Weather</td>
+              <td>{{convert-celsius forecastDay.weather.firstObject.main}} °C </td>
+            </tr>
+            <tr>
+              <td>Clouds</td>
+              <td>{{forecastDay.clouds}}</td>
+            </tr>
+            <tr>
+              <td>Wind</td>
+              <td>{{forecast.wind}} </td>
+            </tr>
+          </tbody>
+        </table>
+    {{/each}}
+
+   
 
     <button class="btn" onclick="window.history.back();">Go back</button>
     
-</div> 
+</article> 

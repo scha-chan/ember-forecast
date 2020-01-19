@@ -1,0 +1,142 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6,
+p, div, span, a, button { 
+  line-height: 1.5;
+}
+
+body {
+  background: #f3f3f3;
+  font-family: 'Lato', 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #016aba;
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.center {
+  text-align: center;
+}
+
+.table {
+  border: 1px solid #ccc;
+}
+
+.table tr td {
+  padding: 10px;
+}
+
+
+.table tr:nth-child(odd) {
+    background: #f4f4f4;
+}
+.table tr td:first-child {
+    font-weight: bold;
+}
+
+.btn {
+  padding: 6px 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin-top: 30px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.container {
+  max-width: 1024px;
+  min-height: 100vh;
+  background: #f9f9f9;
+  margin: 0 auto;
+}
+
+.welcome, .forecast-details {
+  margin: 30px 15px;
+}
+
+.welcome h2 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.welcome > p {
+  text-align: center;
+}
+
+.forecasts label span {
+  font-size: 140%;
+  margin: 50px auto 20px;
+  display: block;
+  text-align: center;
+  font-style: italic;
+}
+
+.forecasts input {
+  padding: 11px;
+  font-size: 18px;
+  width: 500px;
+  max-width: 90%;
+  margin: 20px auto 50px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: solid 1px lightgray;
+  display: block;
+}
+
+.results {
+  margin-top: -10px;
+}
+
+.results > li {
+  list-style: none;
+  margin: 5px;
+  border:1px solid #dfdfdf;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: inline-flex;
+  
+}
+
+.body {
+  padding: 15px;
+}
+
+.forecast {
+  background-color: #f6f6f6;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap;
+  width: 100%;
+}
+
+.forecast:hover {
+  background-color: #f3f3f3;
+}
+
+.forecast h3 {
+  flex-basis: 100%;
+}
+
+.forecast h3 a {
+  display: inline;
+}
+

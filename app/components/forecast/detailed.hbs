@@ -1,0 +1,40 @@
+
+<div class="forecast-details">
+    <h2>Weather in {{@forecast.city.name}}, {{@forecast.city.country}} </h2>     <p></p>
+    <p>
+      {{format-date @forecast.list.dt "DD/MM/YYYY"}} - 
+      {{@forecast.list.weather.firstObject.description}}        
+    </p>
+    <p>
+      <img src="http://openweathermap.org/img/w/{{@forecast.list.weather.firstObject.icon}}.png" alt="" align="center">
+      {{convert-celsius @forecast.list.temp.day}} °C
+    </p>
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Wind</td>
+          <td>{{@forecast.list.speed}}</td>
+        </tr>
+        <tr>
+          <td>Cloudiness</td>
+          <td>{{@forecast.list.clouds}}</td>
+        </tr>
+        <tr>
+          <td>Pressure</td>
+          <td>{{@forecast.list.pressure}}</td>
+        </tr>
+        <tr>
+          <td>Humidity</td>
+          <td>{{@forecast.list.humidity}}</td>
+        </tr>
+        <tr>
+          <td>Geo coords</td>
+          <td></td>
+        </tr>          
+      </tbody>
+    </table>
+
+    <button class="btn" onclick="window.history.back();">Go back</button>
+    
+</div> 

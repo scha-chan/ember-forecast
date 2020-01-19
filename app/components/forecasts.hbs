@@ -1,0 +1,21 @@
+<div class="forecasts">
+  <label>
+    <span>Your city name</span>
+    <Input @value={{this.query}} class="light" placeholder="London, UK" />
+  </label>
+
+  <ul class="results">
+    <Forecasts::Filter @forecasts={{@forecasts}} @query={{this.query}} as |results|>
+      {{#if results}}
+        <h3 class="subtitle">Showing results for {{results.city.name}}, {{results.city.country}}</h3>
+        {{#each results.list as |forecastDay|}}
+          <li><Forecast @forecast={{forecastDay}} @code={{results.cod}} /></li>
+        {{/each}}
+      {{else}}
+        {{#if this.query}}
+          <div class="center">loading results, please wait</div>
+        {{/if}}
+      {{/if}}
+    </Forecasts::Filter>
+  </ul>
+</div>

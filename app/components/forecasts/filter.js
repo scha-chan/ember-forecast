@@ -2,9 +2,9 @@ import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import moment from 'moment';
+import MutableArray from '@ember/array/mutable';
 
 export default class ForecastFilterComponent extends Component {
-  @service store;
   @tracked filtered;
 
   get results() {
@@ -25,9 +25,7 @@ export default class ForecastFilterComponent extends Component {
       return data.text();
     }).then(data => {
       forecasts = JSON.parse(data);
-      console.log(forecasts);
-      this.filtered = this.filterDuplicate(JSON.parse(data));
-      this.store.createRecord('forecast',forecasts);   
+      this.filtered = this.filterDuplicate(JSON.parse(data)); 
       localStorage.setItem('forecasts', JSON.stringify(forecasts));
       return forecasts;
     }); 

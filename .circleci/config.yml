@@ -9,4 +9,5 @@ jobs:
       - checkout
       - run: npm install
       - run: ember build
+      - run: ember test
       

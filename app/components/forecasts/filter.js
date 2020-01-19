@@ -2,7 +2,6 @@ import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import moment from 'moment';
-import MutableArray from '@ember/array/mutable';
 
 export default class ForecastFilterComponent extends Component {
   @tracked filtered;

@@ -1,3 +1,6 @@
+Projeto criado para uma entrevista de emprego usando Ember.
+Não finalizado.
+
 # Forecasts
 
 Project status:  
